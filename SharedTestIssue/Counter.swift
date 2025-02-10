@@ -5,7 +5,7 @@ import SwiftUI
 struct Counter {
     @ObservableState
     struct State: Equatable {
-        var count = 0
+        @Shared(value: 0) var count
         var label = "Start"
     }
     
@@ -29,7 +29,7 @@ struct Counter {
                     await send(.stop)
                 }
             case .increment:
-                state.count += 1
+                state.$count.withLock { $0 += 1 }
                 return .none
             case .stop:
                 state.label = "✅"

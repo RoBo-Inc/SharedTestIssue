@@ -16,13 +16,13 @@ struct SharedTestIssueTests {
             $0.label = "Counting..."
         }
         await store.receive(\.increment) {
-            $0.count = 1
+            $0.$count.withLock { $0 = 1 }
         }
         await store.receive(\.increment) {
-            $0.count = 2
+            $0.$count.withLock { $0 = 2 }
         }
         await store.receive(\.increment) {
-            $0.count = 3
+            $0.$count.withLock { $0 = 3 }
         }
         await store.receive(\.stop) {
             $0.label = "✅"
