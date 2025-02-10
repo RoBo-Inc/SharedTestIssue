@@ -4,7 +4,11 @@ import SwiftUI
 struct SharedTestIssueApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CounterView(
+                store: .init(initialState: .init()) {
+                    Counter()
+                }
+            )
         }
     }
 }

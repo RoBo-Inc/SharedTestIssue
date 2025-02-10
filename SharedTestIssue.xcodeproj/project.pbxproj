@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30FCC5FA2D59EF5E00992648 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 30FCC5F92D59EF5E00992648 /* README.md */; };
+		30FCC60E2D59F35C00992648 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 30FCC60D2D59F35C00992648 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FCC60E2D59F35C00992648 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 				30FCC5CD2D59EE7B00992648 /* SharedTestIssue */,
 				30FCC5DF2D59EE7C00992648 /* SharedTestIssueTests */,
 				30FCC5E92D59EE7C00992648 /* SharedTestIssueUITests */,
+				30FCC60C2D59F35C00992648 /* Frameworks */,
 				30FCC5CC2D59EE7B00992648 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +99,13 @@
 				30FCC5E62D59EE7C00992648 /* SharedTestIssueUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		30FCC60C2D59F35C00992648 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +128,7 @@
 			);
 			name = SharedTestIssue;
 			packageProductDependencies = (
+				30FCC60D2D59F35C00992648 /* ComposableArchitecture */,
 			);
 			productName = SharedTestIssue;
 			productReference = 30FCC5CB2D59EE7B00992648 /* SharedTestIssue.app */;
@@ -612,6 +623,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30FCC60D2D59F35C00992648 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30FCC5FB2D59F09400992648 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30FCC5C32D59EE7B00992648 /* Project object */;
 }
