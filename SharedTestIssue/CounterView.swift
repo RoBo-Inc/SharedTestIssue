@@ -11,6 +11,8 @@ struct Counter {
     
     enum Action {
         case startButtonTapped
+        case increment
+        case stop
     }
     
     var body: some Reducer<State, Action> {
@@ -18,6 +20,19 @@ struct Counter {
             switch action {
             case .startButtonTapped:
                 state.label = "Counting..."
+                return .run { send in
+                    @Dependency(\.continuousClock) var clock
+                    for _ in 1...10 {
+                        try await clock.sleep(for: .seconds(1))
+                        await send(.increment)
+                    }
+                    await send(.stop)
+                }
+            case .increment:
+                state.count += 1
+                return .none
+            case .stop:
+                state.label = "✅"
                 return .none
             }
         }
