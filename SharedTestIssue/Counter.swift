@@ -4,7 +4,7 @@ import SwiftUI
 @Reducer
 struct Counter {
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var count = 0
         var label = "Start"
     }
@@ -22,7 +22,7 @@ struct Counter {
                 state.label = "Counting..."
                 return .run { send in
                     @Dependency(\.continuousClock) var clock
-                    for _ in 1...10 {
+                    for _ in 1...3 {
                         try await clock.sleep(for: .seconds(1))
                         await send(.increment)
                     }
