@@ -12,6 +12,7 @@ struct Counter {
     
     enum Action {
         case buttonTapped
+        case response(Result<[Int], Error>)
         case rows(IdentifiedActionOf<Row>)
     }
     
@@ -19,9 +20,16 @@ struct Counter {
         Reduce { state, action in
             switch action {
             case .buttonTapped:
-                state.rows = .init(uniqueElements: [.init(), .init(), .init()])
                 state.started = true
-                guard let firstId = state.rows.first?.id else { return .none }
+                return .run { send in
+                    @Dependency(\.client) var client
+                    let result = await Result { try await client.numbers() }
+                    await send(.response(result))
+                }
+            case .response(let result):
+                guard case .success(let numbers) = result, !numbers.isEmpty else { return .none }
+                state.rows = .init(uniqueElements: numbers.map(Row.State.init))
+                let firstId = state.rows[0].id
                 state.currentId = firstId
                 return .send(.rows(.element(id: firstId, action: .start)))
             case let .rows(.element(id: id, action: action)):
@@ -43,15 +51,21 @@ struct CounterView: View {
     let store: StoreOf<Counter>
     
     var body: some View {
-        if !store.started {
+        if store.started {
+            if store.rows.isEmpty {
+                ProgressView()
+            } else {
+                List {
+                    ForEach(store.scope(state: \.rows, action: \.rows)) { row in
+                        RowView(store: row)
+                    }
+                }
+                .listStyle(PlainListStyle())
+            }
+        } else {
             Button("Start") { store.send(.buttonTapped) }
         }
-        List {
-            ForEach(store.scope(state: \.rows, action: \.rows)) { row in
-                RowView(store: row)
-            }
-        }
-        .listStyle(PlainListStyle())
+        
     }
 }
 

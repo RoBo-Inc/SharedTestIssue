@@ -5,10 +5,11 @@ import SwiftUI
 struct Row {
     @ObservableState
     struct State: Identifiable, Equatable {
-        @Shared(value: 0) var count
+        @Shared var count: Int
         var id: UUID
         
-        init() {
+        init(startingCount: Int) {
+            _count = .init(value: startingCount)
             @Dependency(\.uuid) var uuid
             self.id = uuid()
         }
@@ -53,7 +54,7 @@ struct RowView: View {
 
 #Preview {
     RowView(
-        store: .init(initialState: .init()) {
+        store: .init(initialState: .init(startingCount: 0)) {
             Row()
         }
     )
