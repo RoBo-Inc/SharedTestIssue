@@ -26,10 +26,9 @@ struct SharedTestIssueTests {
             $0.currentId = .init(0)
         }
         await clock.run()
+        rows.indices.forEach { rows[id: .init($0)]?.$count.withLock { $0 = 3 }}
         await store.receive(\.rows[id: .init(0)].start) {
-            $0.rows[id: .init(0)]?.$count.withLock { $0 = 3 }
-            $0.rows[id: .init(1)]?.$count.withLock { $0 = 3 }
-            $0.rows[id: .init(2)]?.$count.withLock { $0 = 3 }
+            $0.rows = rows
         }
         await store.receive(\.rows[id: .init(0)].increment)
         await store.receive(\.rows[id: .init(0)].increment)
