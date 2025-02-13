@@ -6,11 +6,17 @@ struct Row {
     @ObservableState
     struct State: Identifiable, Equatable {
         @Shared(value: 0) var count
-        var id: UUID
+        let id: UUID
         
         init() {
             @Dependency(\.uuid) var uuid
             self.id = uuid()
+        }
+        
+        mutating func start() -> Effect<Counter.Action> {
+            Row().reduce(into: &self, action: .start).map { [id] in
+                .rows(.element(id: id, action: $0))
+            }
         }
     }
     

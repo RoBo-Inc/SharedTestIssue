@@ -20,21 +20,24 @@ struct Counter {
             switch action {
             case .buttonTapped:
                 state.started = true
-                guard let firstId = state.rows.first?.id else { return .none }
-                state.currentId = firstId
-                return .send(.rows(.element(id: firstId, action: .start)))
+                return nextStart(&state)
             case let .rows(.element(id: id, action: action)):
                 guard case .finish = action,
-                      let currentIndex = state.rows.index(id: id),
-                      currentIndex < state.rows.index(before: state.rows.endIndex) else { return .none }
-                let nextId = state.rows[state.rows.index(after: currentIndex)].id
-                state.currentId = nextId
-                return .send(.rows(.element(id: nextId, action: .start)))
+                      let currentIndex = state.rows.index(id: id) else { return .none }
+                return nextStart(&state, currentIndex)
             }
         }
         .forEach(\.rows, action: \.rows) {
             Row()
         }
+    }
+    
+    private func nextStart(_ state: inout State, _ currentIndex: Int? = nil) -> Effect<Action> {
+        let nextIndex = currentIndex.map(state.rows.index(after:)) ?? state.rows.startIndex
+        guard nextIndex < state.rows.endIndex else { return .none }
+        var nextRow = state.rows[nextIndex]
+        state.currentId = nextRow.id
+        return nextRow.start()
     }
 }
 
