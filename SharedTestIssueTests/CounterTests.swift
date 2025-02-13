@@ -6,11 +6,11 @@ import Testing
 struct SharedTestIssueTests {
     @Test
     func startButtonTapped() async {
-        let rows: IdentifiedArrayOf<Row.State> = withDependencies {
-            $0.uuid = .incrementing
-        } operation: {
-            [.init(), .init(), .init()]
-        }
+//        let rows: IdentifiedArrayOf<Row.State> = withDependencies {
+//            $0.uuid = .incrementing
+//        } operation: {
+//            [.init(), .init(), .init()]
+//        }
         let clock = TestClock()
         let store = TestStore(initialState: .init()) {
             Counter()
@@ -23,9 +23,10 @@ struct SharedTestIssueTests {
             $0.currentId = .init(0)
         }
         await clock.run()
-        rows.indices.forEach { rows[id: .init($0)]?.$count.withLock { $0 = 3 }}
         await store.receive(\.rows[id: .init(0)].start) {
-            $0.rows = rows
+            for index in $0.rows.indices {
+                $0.rows[id: .init(index)]?.$count.withLock { $0 = 3 }
+            }
         }
         await store.receive(\.rows[id: .init(0)].increment)
         await store.receive(\.rows[id: .init(0)].increment)
