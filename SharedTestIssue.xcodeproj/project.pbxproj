@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		30FCC5DD2D59EE7C00992648 /* PBXContainerItemProxy */ = {
+		30EDC2C02D634B1000DD166C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30FCC5C32D59EE7B00992648 /* Project object */;
 			proxyType = 1;
@@ -22,37 +22,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30EDC2BC2D634B1000DD166C /* SharedTestIssueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTestIssueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FCC5CB2D59EE7B00992648 /* SharedTestIssue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedTestIssue.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		30FCC5DC2D59EE7C00992648 /* SharedTestIssueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTestIssueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FCC5F92D59EF5E00992648 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		30EDC2BD2D634B1000DD166C /* SharedTestIssueTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SharedTestIssueTests;
+			sourceTree = "<group>";
+		};
 		30FCC5CD2D59EE7B00992648 /* SharedTestIssue */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SharedTestIssue;
 			sourceTree = "<group>";
 		};
-		30FCC5DF2D59EE7C00992648 /* SharedTestIssueTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SharedTestIssueTests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		30EDC2B92D634B1000DD166C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30FCC5C82D59EE7B00992648 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				30FCC60E2D59F35C00992648 /* ComposableArchitecture in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30FCC5D92D59EE7C00992648 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			children = (
 				30FCC5F92D59EF5E00992648 /* README.md */,
 				30FCC5CD2D59EE7B00992648 /* SharedTestIssue */,
-				30FCC5DF2D59EE7C00992648 /* SharedTestIssueTests */,
+				30EDC2BD2D634B1000DD166C /* SharedTestIssueTests */,
 				30FCC60C2D59F35C00992648 /* Frameworks */,
 				30FCC5CC2D59EE7B00992648 /* Products */,
 			);
@@ -74,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				30FCC5CB2D59EE7B00992648 /* SharedTestIssue.app */,
-				30FCC5DC2D59EE7C00992648 /* SharedTestIssueTests.xctest */,
+				30EDC2BC2D634B1000DD166C /* SharedTestIssueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +89,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		30EDC2BB2D634B1000DD166C /* SharedTestIssueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30EDC2C22D634B1000DD166C /* Build configuration list for PBXNativeTarget "SharedTestIssueTests" */;
+			buildPhases = (
+				30EDC2B82D634B1000DD166C /* Sources */,
+				30EDC2B92D634B1000DD166C /* Frameworks */,
+				30EDC2BA2D634B1000DD166C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30EDC2C12D634B1000DD166C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				30EDC2BD2D634B1000DD166C /* SharedTestIssueTests */,
+			);
+			name = SharedTestIssueTests;
+			packageProductDependencies = (
+			);
+			productName = SharedTestIssueTests;
+			productReference = 30EDC2BC2D634B1000DD166C /* SharedTestIssueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		30FCC5CA2D59EE7B00992648 /* SharedTestIssue */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30FCC5F02D59EE7C00992648 /* Build configuration list for PBXNativeTarget "SharedTestIssue" */;
@@ -112,29 +135,6 @@
 			productReference = 30FCC5CB2D59EE7B00992648 /* SharedTestIssue.app */;
 			productType = "com.apple.product-type.application";
 		};
-		30FCC5DB2D59EE7C00992648 /* SharedTestIssueTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30FCC5F32D59EE7C00992648 /* Build configuration list for PBXNativeTarget "SharedTestIssueTests" */;
-			buildPhases = (
-				30FCC5D82D59EE7C00992648 /* Sources */,
-				30FCC5D92D59EE7C00992648 /* Frameworks */,
-				30FCC5DA2D59EE7C00992648 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				30FCC5DE2D59EE7C00992648 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				30FCC5DF2D59EE7C00992648 /* SharedTestIssueTests */,
-			);
-			name = SharedTestIssueTests;
-			packageProductDependencies = (
-			);
-			productName = SharedTestIssueTests;
-			productReference = 30FCC5DC2D59EE7C00992648 /* SharedTestIssueTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -145,12 +145,12 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					30FCC5CA2D59EE7B00992648 = {
-						CreatedOnToolsVersion = 16.2;
-					};
-					30FCC5DB2D59EE7C00992648 = {
+					30EDC2BB2D634B1000DD166C = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 30FCC5CA2D59EE7B00992648;
+					};
+					30FCC5CA2D59EE7B00992648 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -172,12 +172,19 @@
 			projectRoot = "";
 			targets = (
 				30FCC5CA2D59EE7B00992648 /* SharedTestIssue */,
-				30FCC5DB2D59EE7C00992648 /* SharedTestIssueTests */,
+				30EDC2BB2D634B1000DD166C /* SharedTestIssueTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		30EDC2BA2D634B1000DD166C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30FCC5C92D59EE7B00992648 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,24 +193,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30FCC5DA2D59EE7C00992648 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		30FCC5C72D59EE7B00992648 /* Sources */ = {
+		30EDC2B82D634B1000DD166C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30FCC5D82D59EE7C00992648 /* Sources */ = {
+		30FCC5C72D59EE7B00992648 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,14 +213,55 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		30FCC5DE2D59EE7C00992648 /* PBXTargetDependency */ = {
+		30EDC2C12D634B1000DD166C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 30FCC5CA2D59EE7B00992648 /* SharedTestIssue */;
-			targetProxy = 30FCC5DD2D59EE7C00992648 /* PBXContainerItemProxy */;
+			targetProxy = 30EDC2C02D634B1000DD166C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		30EDC2C32D634B1000DD166C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TA8K847MJZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.SharedTestIssueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SharedTestIssue.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SharedTestIssue";
+			};
+			name = Debug;
+		};
+		30EDC2C42D634B1000DD166C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TA8K847MJZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = home.SharedTestIssueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SharedTestIssue.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SharedTestIssue";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		30FCC5EE2D59EE7C00992648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,55 +454,18 @@
 			};
 			name = Release;
 		};
-		30FCC5F42D59EE7C00992648 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TA8K847MJZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = home.SharedTestIssueTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SharedTestIssue.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SharedTestIssue";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		30FCC5F52D59EE7C00992648 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TA8K847MJZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = home.SharedTestIssueTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SharedTestIssue.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SharedTestIssue";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		30EDC2C22D634B1000DD166C /* Build configuration list for PBXNativeTarget "SharedTestIssueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30EDC2C32D634B1000DD166C /* Debug */,
+				30EDC2C42D634B1000DD166C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		30FCC5C62D59EE7B00992648 /* Build configuration list for PBXProject "SharedTestIssue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -476,15 +480,6 @@
 			buildConfigurations = (
 				30FCC5F12D59EE7C00992648 /* Debug */,
 				30FCC5F22D59EE7C00992648 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30FCC5F32D59EE7C00992648 /* Build configuration list for PBXNativeTarget "SharedTestIssueTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30FCC5F42D59EE7C00992648 /* Debug */,
-				30FCC5F52D59EE7C00992648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
