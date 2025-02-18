@@ -5,6 +5,22 @@ import Testing
 @MainActor
 struct SharedTestIssueTests {
     @Test
+    func fakeTest() async throws {
+        let clock = TestClock()
+        let store = TestStore(initialState: .init()) {
+            Counter()
+        } withDependencies: {
+            $0.uuid = .incrementing
+            $0.continuousClock = clock
+        }
+        store.exhaustivity = .off
+        await store.send(.buttonTapped) {
+            $0.started = true
+            $0.currentId = .init(0)
+        }
+    }
+    
+    @Test
     func startButtonTapped() async {
         let clock = TestClock()
         let store = TestStore(initialState: .init()) {
